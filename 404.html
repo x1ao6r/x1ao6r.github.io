@@ -9,14 +9,14 @@
   <meta charset="UTF-8">
 
   <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="icon" href="/img/touxiang.jpg">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="x1ao6r">
   <meta name="keywords" content="">
   
     <meta name="description" content="x1ao6r Blog">
@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="x1ao6r">
 <meta property="og:description" content="x1ao6r Blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="x1ao6r">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -198,7 +198,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/beijing.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -273,7 +273,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+      <span id="footerInfo"></span> <script> const year = new Date().getFullYear(); document.getElementById("footerInfo").innerHTML = "🌟 Powered by x1ao6r | © 2025–" + year + "  | Stay curious"; </script>
     </div>
   
   
@@ -305,6 +305,43 @@
   
   
 </div>
+
+<div style="text-align: center; margin-top: 30px;">
+  <span id="timeDisplay" style="
+    display: inline-block;
+    background: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+  ">
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>
+  </span>
+
+  <script>
+    var now = new Date();
+    function createtime(){
+        var grt = new Date("04/18/2025 12:00:00"); // 👈 改成你的建站时间
+        now.setTime(now.getTime() + 250);
+        let days = (now - grt) / 1000 / 60 / 60 / 24;
+        let dnum = Math.floor(days);
+        let hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        let hnum = Math.floor(hours).toString().padStart(2, "0");
+        let minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        let mnum = Math.floor(minutes).toString().padStart(2, "0");
+        let seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        let snum = Math.round(seconds).toString().padStart(2, "0");
+
+        document.getElementById("timeDate").innerHTML = `🚀 for ${dnum} d `;
+        document.getElementById("times").innerHTML = `${hnum} h ${mnum} m ${snum} s`;
+    }
+    setInterval(createtime, 250);
+  </script>
+</div>
+
 
   </footer>
 
@@ -358,6 +395,11 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
 
 
 

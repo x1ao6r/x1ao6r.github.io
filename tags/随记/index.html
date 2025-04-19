@@ -9,29 +9,29 @@
   <meta charset="UTF-8">
 
   <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="icon" href="/img/touxiang.jpg">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="x1ao6r">
   <meta name="keywords" content="">
   
     <meta name="description" content="x1ao6r Blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="分类 - test">
-<meta property="og:url" content="http://example.com/categories/test/index.html">
+<meta property="og:title" content="标签 - 随记">
+<meta property="og:url" content="http://example.com/tags/%E9%9A%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="x1ao6r">
 <meta property="og:description" content="x1ao6r Blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="x1ao6r">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>分类 - test - x1ao6r</title>
+  <title>标签 - 随记 - x1ao6r</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -98,7 +98,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 80vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -198,19 +198,23 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/beijing.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="分类 - test"></span>
+            <span id="subtitle" data-typed-text="标签 - 随记"></span>
           
         </div>
 
         
       </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
   </div>
@@ -240,9 +244,9 @@
       
       <p class="h5">2025</p>
     
-    <a href="/2025/04/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" class="list-group-item list-group-item-action">
-      <time>04-18</time>
-      <div class="list-group-item-title">测试文章</div>
+    <a href="/2025/04/19/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="list-group-item list-group-item-action">
+      <time>04-19</time>
+      <div class="list-group-item-title">第一篇文章</div>
     </a>
   
 </div>
@@ -295,7 +299,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+      <span id="footerInfo"></span> <script> const year = new Date().getFullYear(); document.getElementById("footerInfo").innerHTML = "🌟 Powered by x1ao6r | © 2025–" + year + "  | Stay curious"; </script>
     </div>
   
   
@@ -327,6 +331,43 @@
   
   
 </div>
+
+<div style="text-align: center; margin-top: 30px;">
+  <span id="timeDisplay" style="
+    display: inline-block;
+    background: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+  ">
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>
+  </span>
+
+  <script>
+    var now = new Date();
+    function createtime(){
+        var grt = new Date("04/18/2025 12:00:00"); // 👈 改成你的建站时间
+        now.setTime(now.getTime() + 250);
+        let days = (now - grt) / 1000 / 60 / 60 / 24;
+        let dnum = Math.floor(days);
+        let hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        let hnum = Math.floor(hours).toString().padStart(2, "0");
+        let minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        let mnum = Math.floor(minutes).toString().padStart(2, "0");
+        let seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        let snum = Math.round(seconds).toString().padStart(2, "0");
+
+        document.getElementById("timeDate").innerHTML = `🚀 for ${dnum} d `;
+        document.getElementById("times").innerHTML = `${hnum} h ${mnum} m ${snum} s`;
+    }
+    setInterval(createtime, 250);
+  </script>
+</div>
+
 
   </footer>
 
@@ -380,6 +421,11 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
 
 
 
